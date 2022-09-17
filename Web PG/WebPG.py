@@ -1,20 +1,28 @@
 import pickle
 import pandas as pd
 
+pruebaComentario = {
+    'Tweet' : str(input('Ingrese el comentario a predecir: '))
+}
 
-tweets = pd.read_csv('Tweets_Prediccion.csv')
+
+df_ingreso_comentarios = pd.DataFrame()
+df_ingreso_comentarios['Tweet'] = pruebaComentario.values()
+
+
+print(df_ingreso_comentarios.head(1))
 
 
 # Cargar el archivo que contiene la matriz tf-idf entrenada
-with open('./tfidfVectores.pickle', 'rb') as f:
+with open('Modelos/tfidfVectores.pickle', 'rb') as f:
     tfidf = pickle.load(f)
 
 
-tweets_X_tfidf = tfidf.transform(tweets['Tweet'])
+tweets_X_tfidf = tfidf.transform(df_ingreso_comentarios['Tweet'])
 
 
 # Cargar el modelo Random Forest entrenado
-with open('./modelo_randomForest.pickle', 'rb') as file:
+with open('Modelos/modelo_randomForest.pickle', 'rb') as file:
     modelo = pickle.load(file)
 
 
@@ -23,8 +31,9 @@ prediccionModelo = modelo.predict(tweets_X_tfidf)
 
 # Conversion a DataFrame
 tweets_predicciones_RandomForest = pd.DataFrame()
-tweets_predicciones_RandomForest['Tweet'] = tweets['Tweet']
+tweets_predicciones_RandomForest['Tweet'] = df_ingreso_comentarios['Tweet']
 tweets_predicciones_RandomForest['Sentimiento'] = prediccionModelo
 
 
-print(tweets_predicciones_RandomForest.head(10))
+print(tweets_predicciones_RandomForest.head(1))
+print(tweets_predicciones_RandomForest['Sentimiento'].head(1))
