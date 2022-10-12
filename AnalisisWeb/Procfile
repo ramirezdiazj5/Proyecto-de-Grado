@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run appRF.py
+web: sh setup.sh && streamlit run AnalisisSentimientosCovid19.py
