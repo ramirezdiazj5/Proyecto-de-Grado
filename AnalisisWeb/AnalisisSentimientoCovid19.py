@@ -25,7 +25,7 @@ def clasificacion(sentimiento):
 
 def main():
     #Titulo
-    st.title('Analisis de Sentimientos sobre las vacunas contra el COVID 19')
+    st.title('Análisis de Sentimientos sobre las vacunas contra el COVID 19')
 
     # Funcion de entrada de datos
     def datosEntrada():
