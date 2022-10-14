@@ -26,7 +26,15 @@ def clasificacion(sentimiento):
 def main():
     #Titulo
     st.title('Analisis de Sentimientos sobre las vacunas contra el COVID 19')
-    st.image('AnalisisWeb\univalle.png', width = 100)
+    st.subheader('Proyecto final de carrera')
+    st.markdown('Aplicación desarrollada por los estudiantes:')
+    st.markdown('Juan Camilo Ramirez Diaz')
+    st.markdown('201759707')
+    st.markdown('camilo.ramirez.diaz@correounivalle.edu.co')
+    st.markdown('Andres Rosero Urbano')    
+    st.markdown('201759730')
+    st.markdown('andres.rosero@correounivalle.edu.co')
+
     # Funcion de entrada de datos
     def datosEntrada():
         comentario = st.text_input('Ingresa el comentario a predecir: ')
@@ -49,6 +57,8 @@ def main():
 
     if st.button('PREDECIR'):
         st.success(clasificacion(modelo.predict(comentarioTransformado)))
+
+    st.image('https://www.univalle.edu.co/images/Univalle/70_Rojo.jpg', width = 150)
 
 if __name__ == '__main__':
     main()
