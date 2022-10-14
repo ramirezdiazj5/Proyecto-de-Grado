@@ -27,7 +27,7 @@ def main():
     #Titulo
     st.title('Analisis de Sentimientos sobre las vacunas contra el COVID 19')
     st.subheader('Proyecto final de carrera')
-    st.markdown('Aplicación desarrollada por los estudiantes:)
+    st.markdown('Aplicación desarrollada por los estudiantes:')
     st.markdown('Juan Camilo Ramirez Diaz')
     st.markdown('201759707')
     st.markdown('camilo.ramirez.diaz@correounivalle.edu.co')
