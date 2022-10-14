@@ -25,8 +25,8 @@ def clasificacion(sentimiento):
 
 def main():
     #Titulo
-    st.title('Análisis de Sentimientos sobre las vacunas contra el COVID 19')
-
+    st.title('Analisis de Sentimientos sobre las vacunas contra el COVID 19')
+    st.image('https://www.univalle.edu.co/images/Univalle/70_Rojo.jpg', width = 100)
     # Funcion de entrada de datos
     def datosEntrada():
         comentario = st.text_input('Ingresa el comentario a predecir: ')
