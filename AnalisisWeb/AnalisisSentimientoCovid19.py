@@ -49,6 +49,7 @@ def main():
 
     def tf_idf(dtaframe):
         comentario_tfidf = tfidf.transform(dtaframe['Tweet'])
+        comentario_tfidf = comentario_tfidf.append(tf_idf)
         return comentario_tfidf
     
     comentarioTransformado = tf_idf(df_prediccion)
