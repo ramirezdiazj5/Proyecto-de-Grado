@@ -13,7 +13,7 @@ with open('modelo_randomForest.pickle', 'rb') as file:
     modelo = pickle.load(file)
 
 # Carga de dataset
-datasetModelo = pd.read_csv(r'AnalisisWeb/Tweets_Prediccion.csv')
+datasetModelo = pd.read_csv('Tweets_Prediccion.csv')
 
 # Funcion de clasificacion de sentimientos
 def clasificacion(sentimiento):
