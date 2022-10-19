@@ -25,7 +25,7 @@ def clasificacion(sentimiento):
 
 def main():
     #Titulo
-    st.title('Analisis de Sentimientos sobre las vacunas contra el COVID 19')
+    st.title('PERCEPCIÓN DE LA COMUNIDAD COLOMBIANA DE TWITTER SOBRE LAS VACUNAS UTILIZADAS EN EL PLAN DE VACUNACIÓN.')
     st.subheader('Proyecto final de carrera')
     st.markdown('Aplicación desarrollada por los estudiantes:')
     st.markdown('Juan Camilo Ramirez Diaz')
