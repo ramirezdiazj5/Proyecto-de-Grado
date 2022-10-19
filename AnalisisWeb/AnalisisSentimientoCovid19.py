@@ -12,6 +12,8 @@ with open('tfidfVectores.pickle', 'rb') as f:
 with open('modelo_randomForest.pickle', 'rb') as file:
     modelo = pickle.load(file)
 
+# Carga de dataset
+datasetModelo = pd.read_csv(r'AnalisisWeb/Tweets_Prediccion.csv')
 
 # Funcion de clasificacion de sentimientos
 def clasificacion(sentimiento):
@@ -43,6 +45,8 @@ def main():
         df_comentario = pd.DataFrame()
         df_comentario['Tweet'] = data.values()
 
+        df_comentario = datasetModelo.append(df_comentario)
+        
         return df_comentario
 
     df_prediccion = datosEntrada()
@@ -54,7 +58,7 @@ def main():
     comentarioTransformado = tf_idf(df_prediccion)
 
     if st.button('PREDECIR'):
-        st.success(clasificacion(modelo.predict(comentarioTransformado)))
+        st.success(clasificacion(modelo.predict(comentarioTransformado[-1])))
 
     st.image('https://www.univalle.edu.co/images/Univalle/70_Rojo.jpg', width = 150)
 
