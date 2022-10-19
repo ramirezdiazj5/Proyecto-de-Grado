@@ -46,7 +46,6 @@ def main():
         df_comentario['Tweet'] = data.values()
 
         df_comentario = datasetModelo.append(df_comentario)
-        df_comentario.to_csv('Tweets_Prediccion.csv')
         return df_comentario
 
     df_prediccion = datosEntrada()
