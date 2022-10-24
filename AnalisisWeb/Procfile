@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run AnalisisSentimientosVacunasCovid19.py
+web: sh setup.sh && streamlit run AnalisisSentimientoCovid19.py
